@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->integer('quantity_of_post')->nullable();
+            $table->integer('song_quantity')->default(0);
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumns('quantity_of_post');
+            $table->dropColumn('song_quantity');
         });
     }
 };
